@@ -1,2 +1,6 @@
-package com.joboffer.Company;public interface CompanyRepository {
+package com.joboffer.Company;
+
+import org.springframework.data.jpa.repository.JpaRepository;
+
+public interface CompanyRepository extends JpaRepository<Company, Long> {
 }

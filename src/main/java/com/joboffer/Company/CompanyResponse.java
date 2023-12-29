@@ -1,2 +1,15 @@
-package com.joboffer.Company;public class CompanyResponse {
+package com.joboffer.Company;
+
+import lombok.Getter;
+import lombok.Setter;
+
+@Getter
+@Setter
+public class CompanyResponse {
+    private Long id;
+    private String password;
+    private String address;
+    private String email;
+    private String phoneNumber;
+    private String image;
 }
