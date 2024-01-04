@@ -1,9 +1,6 @@
 package com.joboffer.Company;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
 
 @Getter
@@ -20,5 +17,6 @@ public class Company {
     private String address;
     private String email;
     private String phoneNumber;
-    private String image;
+    @Column(columnDefinition = "oid")
+    private byte[] image;
 }

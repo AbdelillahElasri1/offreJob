@@ -6,6 +6,7 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.io.IOException;
 import java.util.List;
 
 @RestController
@@ -14,7 +15,7 @@ import java.util.List;
 public class CompanyController {
     private final CompanyService companyService;
     @PostMapping
-    public ResponseEntity<CompanyRequest> createCompany(@RequestBody CompanyRequest companyRequest){
+    public ResponseEntity<CompanyRequest> createCompany(@RequestBody CompanyRequest companyRequest) throws IOException {
         CompanyRequest company = companyService.createCompany(companyRequest);
         return ResponseEntity.status(HttpStatus.CREATED).body(company);
     }

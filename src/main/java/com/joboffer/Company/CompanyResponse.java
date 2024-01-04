@@ -11,5 +11,5 @@ public class CompanyResponse {
     private String address;
     private String email;
     private String phoneNumber;
-    private String image;
+    private byte[] image;
 }

@@ -4,6 +4,7 @@ import lombok.RequiredArgsConstructor;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 
+import java.io.IOException;
 import java.util.List;
 import java.util.Optional;
 import java.util.stream.Collectors;
@@ -14,8 +15,9 @@ public class CompanyServiceImp implements CompanyService{
     private final ModelMapper modelMapper;
     private final CompanyRepository companyRepository;
     @Override
-    public CompanyRequest createCompany(CompanyRequest companyRequest) {
+    public CompanyRequest createCompany(CompanyRequest companyRequest) throws IOException {
         Company company = modelMapper.map(companyRequest , Company.class);
+        company.setImage(companyRequest.getImage().getBytes());
         Company savedCompany = companyRepository.save(company);
         return modelMapper.map(savedCompany, CompanyRequest.class);
     }

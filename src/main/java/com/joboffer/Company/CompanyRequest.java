@@ -2,6 +2,7 @@ package com.joboffer.Company;
 
 import lombok.Getter;
 import lombok.Setter;
+import org.springframework.web.multipart.MultipartFile;
 
 @Getter
 @Setter
@@ -10,5 +11,5 @@ public class CompanyRequest {
     private String address;
     private String email;
     private String phoneNumber;
-    private String image;
+    private MultipartFile image;
 }
